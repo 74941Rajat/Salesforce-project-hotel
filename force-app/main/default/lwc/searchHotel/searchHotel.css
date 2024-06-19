@@ -1,0 +1,14 @@
+:host{
+    --slds-c-card-color-background: #b2beb5;
+}
+.font{
+    font-size: 15px;
+    font-weight: bold;
+}
+.Filter{
+    font-size: 15px;
+    font-weight: bold;
+}
+.color{
+    background: #c5c7c9;
+}

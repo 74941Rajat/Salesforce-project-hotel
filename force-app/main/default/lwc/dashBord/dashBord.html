@@ -1,0 +1,80 @@
+<template>
+    <lightning-card class="slds-p-around_large">
+        <h1 style="font-size: 32px;" class="slds-align_absolute-center"><b>Hotel Premium Admin Dashboard</b></h1>
+        <lightning-button variant="brand" class="slds-p-around_large slds-align_absolute-center"
+              label="Customer Details" onclick={getCustomers}></lightning-button>
+              <template if:true={showCustomer}>
+                <h1 style="font-size: 32px;"><b>Customer Of Hotel Premium</b></h1>
+                <table class="slds-p-around_large">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid black; text-align:center;">Customer Id</th>
+                            <th style="border: 1px solid black; text-align:center;">Customer Name</th>
+                            <th style="border: 1px solid black; text-align:center;">Adhar card Number</th>
+                            <th style="border: 1px solid black; text-align:center;">Email-Id</th>
+                            <th style="border: 1px solid black; text-align:center;">Phone</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={customers} for:item="c">
+                            <tr key={c.Id}>
+                                <td style="border: 1px solid black; text-align:center;">{c.Id}</td>
+                                <td style="border: 1px solid black; text-align:center;">{c.Name}</td>
+                                <td style="border: 1px solid black; text-align:center;">{c.Aadhar_card_number__c}</td>
+                                <td style="border: 1px solid black; text-align:center;">{c.Email__c}</td>
+                                <td style="border: 1px solid black; text-align:center;">{c.Phone__c}</td>
+
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+                <lightning-button variant="brand" class="slds-p-around_large slds-align_absolute-center"
+                label="Hide customer details" onclick={HideCustomers}></lightning-button>
+              </template>
+
+    </lightning-card>
+    <lightning-card class="slds-p-around_large">
+        <lightning-button variant="brand" class="slds-p-around_large slds-align_absolute-center"
+              label="Reservations Details" onclick={getReservation}></lightning-button>
+              <template if:true={showReservation}>
+                <h1 style="font-size: 32px;"><b>Reservation at Hotel Premium</b></h1>
+                <table class="slds-p-around_large">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid black; text-align:center;">Reservation Id</th>
+                            <th style="border: 1px solid black; text-align:center;">Customer Name</th>
+                            <th style="border: 1px solid black; text-align:center;">Date of Reservation</th>
+                            <th style="border: 1px solid black; text-align:center;">Check-in Date</th>
+                            <th style="border: 1px solid black; text-align:center;">Ceck-out Date</th>
+                            <th style="border: 1px solid black; text-align:center;">Email-Id</th>
+                            <th style="border: 1px solid black; text-align:center;">Phone</th>
+                            <th style="border: 1px solid black; text-align:center;">Status </th>
+                            <th style="border: 1px solid black; text-align:center;">Room</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={reservation} for:item="r">
+                            <tr key={r.Id}>
+                                <td style="border: 1px solid black; text-align:center;">{r.Id}</td>
+                                <td style="border: 1px solid black; text-align:center;">{r.Customer_Name__c}</td>
+                                <td style="border: 1px solid black; text-align:center;">{r.Date_of_Reservation__c}</td>
+                                <td style="border: 1px solid black; text-align:center;">{r.Check_in_Date__c}</td>
+                                <td style="border: 1px solid black; text-align:center;">{r.Check_out_Date__c}</td>
+                                <td style="border: 1px solid black; text-align:center;">{r.Emailid__c}</td>
+                                <td style="border: 1px solid black; text-align:center;">{r.Phone__c}</td>
+                                <td style="border: 1px solid black; text-align:center;">{r.Status__c}</td>
+                                <td style="border: 1px solid black; text-align:center;">{r.Room_Name__c}</td>
+
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+                <lightning-button variant="brand" class="slds-p-around_large slds-align_absolute-center"
+                label="Hide reservation details" onclick={HideReservations}></lightning-button>
+              </template>
+
+    </lightning-card>
+
+</template>

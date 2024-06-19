@@ -1,0 +1,30 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="color slds-col slds-size_4-of-12">
+            <div style={background1}></div>
+        </div>
+        <div class="color slds-col slds-size_4-of-12">
+            <lightning-card title="Holet Customer Details" icon-name="custom:custom63">
+            <lightning-record-edit-form record-id={recordid} object-api-name="Reservation__c"
+             onsuccess={handleSucces} onsubmit={handleSubmit}>
+             <lightning-output-field field-name="ReservationId"></lightning-output-field>
+            <lightning-input-field field-name="Name"></lightning-input-field>
+            <lightning-input-field field-name="Customer_Name__c"></lightning-input-field>
+            <lightning-input-field field-name="Phone__c"></lightning-input-field>
+            <lightning-input-field field-name="Emailid__c"></lightning-input-field>
+            <lightning-input-field field-name="Aadhar_card_number__c"></lightning-input-field>
+            <lightning-input-field field-name="Date_of_Reservation__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_in_Date__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_out_Date__c"></lightning-input-field>
+            <lightning-input-field field-name="Room__c"></lightning-input-field>
+            <lightning-input-field field-name="Search_Hotel__c"></lightning-input-field>
+            <lightning-button class="slds-m-top_small" type="submit" variant="brand" name="save" label="save"></lightning-button>
+        </lightning-record-edit-form>
+        </lightning-card>
+        </div>
+        <div class="color slds-col slds-size_4-of-12">
+            <div style={background2}></div>
+        </div>
+        </div>
+
+</template>

@@ -1,0 +1,23 @@
+:host{
+    --slds-c-card-color-background: #b2beb5;
+}
+h1{
+    font-size: 40px;
+    font-weight: bold;
+
+}
+h2{
+    font-weight: bold;
+    font-style: italic;
+}
+.fylter{
+    background: #c5c7c9;
+    text-align: center;
+    font-size: 18px;
+   
+}
+.hotel{
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+}

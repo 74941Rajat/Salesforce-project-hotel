@@ -1,0 +1,19 @@
+<template>
+    <lightning-card class="slds-text-align_center">
+        <h1 class="slds-text-align_center">Welcome to Premium Hotels and Suites</h1>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_6-of-12">
+                <div class="fylter ">
+                <h2>Premium Hotels and Suites is a chain of hotels established in 1947</h2>
+                <template for:each={hotels} for:item="hotel">
+                     <div key={hotel.id}>
+                        <p class="hotel">{hotel.name}</p>
+                    </div>
+                </template>
+            </div></div>
+            <div class="slds-col slds-size_6-of-12">
+                <div style={background} ></div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

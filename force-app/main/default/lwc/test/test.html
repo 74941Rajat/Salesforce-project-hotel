@@ -1,0 +1,60 @@
+<template>
+    <lightning-card >
+        <div class="slds-form-element">
+            <label class="font"  for="text-input-id-input">Find your Next Stay</label>
+            <div class=" slds-input-has-icon slds-input-has-icon_left-right">
+          <lightning-input type="search" id="text-input-id-input" placeholder="Enter City"  onchange={handleDestinationCity}></lightning-input>
+            </div> </div>
+
+            <lightning-button  label="search" variant="brand" onsubmit={handleSearchHotel}></lightning-button>
+            <div class="slds-grid slds-gutters">
+                <div class="color slds-col slds-size_1-of-6">
+                  <div class="Filter" >Filter By:</div>
+                  <lightning-checkbox-group 
+                  label="Property Rating : "
+                  options={ratingOption}
+                  value={selectedRating}
+                  onchange={handleRating}></lightning-checkbox-group>
+                  <lightning-checkbox-group 
+                  label="Room facilities :"
+                  options={amenitiesOption}
+                  value={selectedAmenities}
+                  onchange={handleAmenities}></lightning-checkbox-group>
+                    <lightning-slider 
+                    label="Your Budget(per night)"
+                    value={selectPriceRange}
+                    onchange={handlePrice}
+                   >
+                     
+                    </lightning-slider>
+                    <div class="slds-text-align_center slds-m-top_medium"></div>
+                    Selected Price Range: ₹ {handlePrice}
+                </div>
+                <div class="slds-col slds-size_5-of-6">
+                  <table border="1"  cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+                    <tbody>
+                      <tr>
+                        <th style="text-align: center;">Hotel Name</th>
+                        <th style="text-align: center;">City</th>
+                        <th style="text-align: center;">Rating</th>
+                        <th style="text-align: center;">Amenities</th>
+                        <th style="text-align: center;">Price</th>
+                      </tr>
+                      <template for:each={hotelRecord} for:item="h">
+                        <tr class="slds-hint-parent" key={h.id}>
+                          <td style="text-align: center;">{h.Name}</td>
+                          <td style="text-align: center;">{h.City__c}</td>
+                          <td style="text-align: center;">{h.Rating__c}</td>
+                          <td style="text-align: center;">{h.Amenities__c}</td>
+                          <td style="text-align: center;">{h.Price__c}</td>
+                        </tr>
+                      </template>
+
+                    </tbody>
+
+                  </table>
+
+                </div>
+            </div>
+    </lightning-card>
+</template>
